@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Box</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div class="container-fluid" id="container-fluid">
+        <button id="fixed_btn" type="button" class="btn btn-primary" data-bs-target="#exampleModal"
+            onclick="craeteDiv()"><i class="bi bi-plus-circle-fill"></i></button>
+        <button type="button" id="fixed_btn1" class="btn btn-primary" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">Select color</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add your choice</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex gap-4 flex-wrap justify-content-around ">
+
+                    <!-- card  -->
+
+                    <div class="card bg-danger d-flex justify-content-center align-items-center" style="width: 12rem; height: 10rem;">
+                        <button type="button" class="btn btn-primary" id="danger" onclick="click('danger')">Add</button>
+                    </div>
+                    <div class="card bg-secondary d-flex justify-content-center align-items-center" style="width: 12rem; height: 10rem;">
+                        <button type="button" class="btn btn-primary" id="secondary" onclick="click('secondary')">Add</button>
+                    </div>
+                    <div class="card bg-warning d-flex justify-content-center align-items-center" style="width: 12rem; height: 10rem;">
+                        <button type="button" class="btn btn-primary" id="warning" onclick="click('warning')">Add</button>
+                    </div>
+                    <div class="card bg-success d-flex justify-content-center align-items-center" style="width: 12rem; height: 10rem;">
+                        <button type="button" class="btn btn-primary" id="success" onclick="click('success')">Add</button>
+                    </div>
+                    <div class="card bg-info d-flex justify-content-center align-items-center" style="width: 12rem; height: 10rem;">
+                        <button type="button" class="btn btn-primary" id="info" onclick="click('info')">Add</button>
+                    </div>
+                    <div class="card bg-danger-subtle d-flex justify-content-center align-items-center" style="width: 12rem; height: 10rem;">
+                        <button type="button" class="btn btn-primary" id="danger-subtle" onclick="click('danger-subtle')">Add</button>
+                    </div>
+
+                    <!-- card-close  -->
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
