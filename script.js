@@ -1,31 +1,64 @@
-let colors = [];
+let predefinedcolors = [
+        'green',
+        'blue',
+        'yellow',
+        'crimson',
+        'aqua',
+        'black',
+        'red',
+        'violet',
+        'grey',
+        'chartreuse'];
+let colors = ['green',
+        'blue',
+        'yellow',
+        'crimson'];
 
-function craeteDiv(){
+function craeteDiv() {
         let newDiv = document.createElement("div");
         newDiv.id = "box"
         console.log(colors);
-        // let colors = ["#3498db", "#2ecc71", "#e74c3c", "#f39c12", "#9b59b6"]
         const random = Math.floor(Math.random() * colors.length);
         newDiv.style.backgroundColor = colors[random];
         document.getElementById("container-fluid").appendChild(newDiv);
 }
-function click(id){
-        let divid = id;
-        console.log(colors);
-        if (divid == 'danger') {
-                colors.push("#dc3545")     
-        }else if (divid =='secondary'){
-                colors.push("#6c757d")
-        }else if (divid =='warning'){
-                colors.push("#f8d7da")
-        }else if (divid =='success'){
-                colors.push("#28a745")
-        }else if (divid =='info'){
-                colors.push("#17A2B8")
-        }else if(divid == 'danger-subtle'){
-                colors.push("#dc3545")
-        }else{
-                colors.push("#000000")
+function addColor(id) {
+        const index = colors.indexOf(id);
+
+        if (index !== -1) {
+                // If id is already in the array, remove it
+                colors.splice(index, 1);
+        } else {
+                // If id is not in the array, add it
+                colors.push(id);
+                //     document.getElementById('addbtn').innerHTML = "Remove";
         }
-        
+        createPredefineBox()
 }
+
+function createPredefineBox() {
+
+        const containter = document.getElementById('predifinedCOlorContainer');
+        containter.innerHTML =''
+        for (let i = 0; i < predefinedcolors.length; i++) {
+                const node = document.createElement('div')
+                if (colors.includes(predefinedcolors[i])) {
+                        node.innerHTML = `
+                        <div class="card d-flex justify-content-center align-items-center" style="width: 12rem; height: 10rem;background:${predefinedcolors[i]}">
+                                <button type="button" class="btn btn-primary" id="addbtn" onclick="addColor('${predefinedcolors[i]}')">Remove</button>    
+                            </div>
+                        `
+                } else {
+                        node.innerHTML = `
+                <div class="card d-flex justify-content-center align-items-center" style="width: 12rem; height: 10rem;background:${predefinedcolors[i]}">
+                        <button type="button" class="btn btn-primary" id="addbtn" onclick="addColor('${predefinedcolors[i]}')">Add</button>    
+                    </div>
+                `
+                }
+
+                containter.appendChild(node)
+        }
+
+}
+
+createPredefineBox()
