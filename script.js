@@ -8,7 +8,8 @@ let predefinedcolors = [
         'red',
         'violet',
         'grey',
-        'chartreuse'];
+        'chartreuse',
+'darkblue'];
 let colors = ['green',
         'blue',
         'yellow',
